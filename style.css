@@ -1,0 +1,637 @@
+html,body{
+  width: 100%;
+  margin: 0;
+}
+
+
+/*========= ローディング画面のためのCSS ===============*/
+#splash {
+  position: fixed;
+  width: 100%;
+  background: #333;
+  z-index: 9999999;
+  text-align:center;
+  color:#fff;
+}
+
+#splash-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+.splashbg{
+    display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg{
+ display:block;
+  animation-name:PageAnime;
+  animation-duration:1.2s;
+  animation-timing-function:ease-in-out;
+  animation-fill-mode:forwards;
+    content: "";
+    position:fixed;
+  z-index: 999;
+    width: 50%;
+    height: 100vh;
+    top: 0;
+  left: 0;
+    transform: translateX(-300%) skewX(-45deg);
+    background-color: #333;/*伸びる背景色の設定*/
+}
+
+@keyframes PageAnime{
+  0% {
+    transform-origin:left;
+    transform:translateX(-300%) skewX(-45deg);
+  }
+  100% {
+    transform-origin:left;
+    transform:translateX(500%) skewX(-45deg);
+  }
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#container{
+  opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container{
+  animation-name:PageAnimeAppear;
+  animation-duration:7s;
+  animation-delay: 0.7s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+  0% {
+  opacity: 0;
+  }
+  100% {
+  opacity: 1;
+}
+}
+
+/*========= レイアウトのためのCSS ===============*/
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  width: 100%;
+  background: #f0ffff;
+}
+
+
+h1{
+  font-size: 36px;
+  padding-left: 8px;
+  margin-bottom: 16px;
+  color: #555;
+  font-weight: 400;
+}
+
+
+h2 {
+  color: #e63c35;
+}
+
+
+a.fbbutton {
+  margin-top: 16px;
+  font-size: 16px;
+  padding: 8px 32px;
+  background: #3b98;
+  color: #f9f9f9;
+  border: 2px solid #3b5998;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.5s;
+  clear: left; 
+  float: left;
+}
+
+a.fbbutton:hover {
+  background: #f9f9f9;
+  color: #3b5998;
+}
+*/
+
+img {
+  float: left;
+  /*  margin-right: 8px; 追加*/
+}
+
+p {
+  margin-bottom: 16px;
+  float: left;
+}
+
+.content {
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
+  overflow: hidden;
+}
+
+.content:last-child {
+  border-bottom: 0;
+}
+
+.top-title {
+  font-size: 36px;
+  padding-left: 8px;
+  margin-bottom: 16px;
+  color: #555;
+  font-weight: 400;
+  border-left: 6px solid #e63c35;
+}
+
+/*追加*/
+
+.top-title2 {
+  font-size: 36px;
+  padding-right: 8px;
+  margin-bottom: 16px;
+  color: #555;
+  font-weight: 400;
+  border-right: 6px solid #e63c35;
+  text-align: right;
+}
+z
+#main {
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+  padding: 16px;
+  float: left;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#header {
+  width: 100%;
+  overflow: hidden;
+  background: #e63c35;
+  padding: 6px 0px;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+}
+
+#header h1 {
+  float: left;
+  color: #f9f9f9;
+  margin-right: 48px;
+}
+
+nav {
+  overflow: hidden;
+}
+
+nav li {
+  list-style-type: none;
+  float: left;
+  margin-top: 2px;
+}
+
+nav a {
+  font-style: 16px;
+  display: block;
+  text-decoration: none;
+  color: #f9f9f9;
+  margin: 14px 16px 0px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  border-bottom: 3px solid #f9f9f9;
+}
+
+
+.main-visual {
+  width: 100%;
+  height: 500px;
+  background: #fff url(sleep.png) 0 0 no-repeat;
+  background-size: contain;
+  margin-bottom: 32px;
+  margin-left: 400px;
+  padding-top: 60px;
+}
+#content1 {
+  position: relative;
+}
+
+/*追加*/
+
+#content3 {
+  position: relative;
+}
+
+/*追加*/
+
+.main-visual h1 {
+  color: #fff;
+  text-align: center;
+  line-height: 500px;
+  font-size: 100px;
+}
+
+/*追加*/
+
+a.top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 5px 8px;
+  border: 3px solid #000;
+  border-radius: 3px;
+}
+
+.dissolve-animation {
+  position: relative;
+  width: 300px;
+  float: left;
+}
+
+#content1 .dissolve-animation .caption {
+  position: absolute;
+  padding: 20px;
+  background: #e63c35;
+  height: 160px;
+  width: 260px;
+
+  /*移動をスムーズにする*/
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+
+  /*透明にする*/
+  opacity: 0;
+}
+
+#content1 .dissolve-animation .caption h2 {
+  color: white;
+  font-size: 13px;
+}
+
+#content1 .dissolve-animation .caption h3 {
+  color: white;
+  font-size: 15px;
+}
+
+#content1 .dissolve-animation:hover .caption {
+  /*右下に移動させる*/
+  -webkit-transform: translate(8px, 8px);
+  -ms-transform: translate(8px, 8px);
+  -o-transform: translate(8px, 8px);
+  transform: translate(8px, 8px);
+
+  /*透明だったものを表示させる*/
+  opacity: 1;
+}
+
+
+.flip-animation {
+  position: relative;
+  width: 300px;
+  float: left;
+
+  /*奥行きの深さを設定*/
+  -moz-perspective: 500;
+  -webkit-perspective: 500;
+  -ms-perspective: 500;
+  perspective: 500;
+
+  /*奥行きが始まる位置を設定*/
+  -webkit-perspective-origin: left;
+  -moz-perspective-origin: left;
+  -ms-perspective-origin: left;
+  perspective-origin: left;
+}
+
+#content2 .flip-animation .caption {
+  position: absolute;
+  padding: 20px;
+  background: #e63c35;
+  height: 185px;
+  width: 100px;
+
+  /*透明にする*/
+  opacity: 0;
+
+  /*Y軸方向に-90度回転*/
+  -webkit-transform: rotateY(-90deg);
+  -ms-transform: rotateY(-90deg);
+  -o-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+
+  /*なめらかに*/
+  -webkit-transition: transform 0.4s, opacity 0.1s 0.3s;
+  -o-transition: transform 0.4s, opacity 0.1s 0.3s;
+  transition: transform 0.4s, opacity 0.1s 0.3s;
+
+  /*回転軸を左端に調整*/
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+#content2 .flip-animation .caption h2 {
+  color: white;
+  font-size: 13px;
+}
+
+#content2 .flip-animation .caption h3 {
+  color: white;
+  font-size: 15px;
+}
+
+#content2 .flip-animation:hover .caption {
+  /*透明だったものを表示させる*/
+  opacity: 1;
+
+  /*Y軸『0度』の位置に回転*/
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+
+  /*なめらかに*/
+  -webkit-transition: transform 0.4s, opacity 0.1s;
+  -o-transition: transform 0.4s, opacity 0.1s;
+  transition: transform 0.4s, opacity 0.1s;
+}
+
+#content2 .flip-animation:hover img {
+  -webkit-transform: translateX(25%);
+  -ms-transform: translateX(25%);
+  -o-transform: translateX(25%);
+  transform: translateX(25%);
+}
+
+
+#content2 .flip-animation img {
+  -webkit-transition: transform 0.4s;
+  -o-transition: transform 0.4s;
+  transition: transform 0.4s;
+}
+
+#main a.fbbutton {
+  font-size: 16px;
+  color: #3B5998;
+  text-decoration: none;
+  letter-spacing: 3px;
+  padding: 10px 30px;
+  margin-left: 10px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.fbbutton .edge {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none repeat scroll 0 0 #3B5998;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.fbbutton .edge1 {
+  width: 1px;
+  -webkit-transform: translate3d(0, -100%, 0);
+  -ms-transform: translate3d(0, -100%, 0);
+  -o-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  transition-delay: 0.2s;
+}
+
+.fbbutton .edge2 {
+  height: 1px;
+  -webkit-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+
+.fbbutton .edge3 {
+  width: 1px;
+  left: auto;
+  right: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  -ms-transform: translate3d(0, 100%, 0);
+  -o-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  transition-delay: 0.2s;
+}
+
+.fbbutton .edge4 {
+  height: 1px;
+  top: auto;
+  bottom: 0;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  -o-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+
+a.fbbutton:hover .edge {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+#main a.fbbutton:active {
+  background-color: #3B5998;
+  color: #fff;
+}
+
+
+
+/*--------------------------------------
+  カード型_03
+--------------------------------------*/
+#sec {
+  padding: 0;
+  background: #fff;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+#sec ul {
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  list-style: none;
+  border: none;
+}
+#sec ul li {
+  padding: 40px;
+  width: 320px;
+  transition: box-shadow 0.3s;
+}
+#sec ul li:hover {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+#sec ul li:hover span {
+  color: #63B7E6;
+}
+#sec ul li:hover p {
+  color: #555;
+}
+#sec ul li:hover .title01 {
+  color: #63B7E6;
+}
+#sec ul li:hover .title01:after {
+  width: 25px;
+}
+#sec ul li span {
+  font-size: 2.6em;
+  display: block;
+  transition: color 0.3s;
+  color: #A2A2A2;
+}
+#sec ul li span:before, #sec ul li span:after {
+  position: static;
+}
+#sec ul li .title01 {
+  color: #6f6f6f;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 100;
+  transition: color 0.3s;
+}
+#sec ul li .title01:after {
+  content: "";
+  position: relative;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #6f6f6f;
+  transition: width 0.3s;
+}
+#sec ul li p {
+  color: #A2A2A2;
+  text-align: left;
+  text-indent: 1em;
+  font-size: 16px;
+  line-height: 26px;
+  transition: color 0.3s;
+}/*--------------------------------------
+  カード型_03
+--------------------------------------*/
+#sec {
+  padding: 0;
+  background: #fff;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+#sec ul {
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  list-style: none;
+  border: none;
+}
+
+#sec ul li {
+  padding: 40px;
+  width: 320px;
+  transition: box-shadow 0.3s;
+}
+
+
+
+#sec ul li:hover {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+#sec ul li:hover span {
+  color: #63B7E6;
+}
+#sec ul li:hover p {
+  color: #555;
+}
+#sec ul li:hover .title01 {
+  color: #63B7E6;
+}
+#sec ul li:hover .title01:after {
+  width: 25px;
+}
+#sec ul li span {
+  font-size: 2.6em;
+  display: block;
+  transition: color 0.3s;
+  color: #A2A2A2;
+}
+#sec ul li span:before, #sec ul li span:after {
+  position: static;
+}
+#sec ul li .title01 {
+  color: #6f6f6f;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 100;
+  transition: color 0.3s;
+}
+#sec ul li .title01:after {
+  content: "";
+  position: relative;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #6f6f6f;
+  transition: width 0.3s;
+}
+#sec ul li p {
+  color: #A2A2A2;
+  text-align: left;
+  text-indent: 1em;
+  font-size: 16px;
+  line-height: 26px;
+  transition: color 0.3s;
+}
+
+footer {
+  width: 100%;
+  height: 120px; 
+  text-align: center;
+  padding: 50px 0;
+  background-color: #ff0000;
+}
+.footer-text {
+  color: #fff;
+}
